@@ -27,12 +27,12 @@ struct RegexHelper {
     
 }
 
-infix operator =- {
+infix operator =~ {
 associativity none
 precedence 130
 }
 
-func =-(lhs: String, rhs: String) -> Bool {
+func =~(lhs: String, rhs: String) -> Bool {
     do {
         return try RegexHelper(rhs).match(lhs)
     }catch {
@@ -41,8 +41,8 @@ func =-(lhs: String, rhs: String) -> Bool {
 }
 
 //模式匹配
-//重载 -=操作符
-func -=(pattern: NSRegularExpression, input: String) -> Bool {
+//重载 ~=操作符
+func ~=(pattern: NSRegularExpression, input: String) -> Bool {
     return pattern.numberOfMatchesInString(input,
                                            options: [],
                                            range: NSMakeRange(0, input.characters.count)) > 0
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         //        }
         
         let maybeMailAddress = "onev@onevcat.com"
-        if maybeMailAddress =- mailPattern {
+        if maybeMailAddress =~ mailPattern {
             print("有效的邮箱地址")
         }
         

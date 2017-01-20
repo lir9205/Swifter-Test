@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         if let name = valueFrom(xiaoMing, key: "name") as? String {
             print("通过key得到值：\(name)")
         }
-
+        
         
     }
     
