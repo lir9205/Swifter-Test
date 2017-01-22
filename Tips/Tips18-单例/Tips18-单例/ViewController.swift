@@ -1,18 +1,22 @@
 //
 //  ViewController.swift
-//  Tips17
+//  Tips18-单例
 //
-//  Created by 李芮 on 17/1/20.
+//  Created by 李芮 on 17/1/21.
 //  Copyright © 2017年 7feel. All rights reserved.
 //
 
 import UIKit
 
+/******   单例   *******/
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        MyManager.sharedManager.method()
+        
     }
 
     override func didReceiveMemoryWarning() {
