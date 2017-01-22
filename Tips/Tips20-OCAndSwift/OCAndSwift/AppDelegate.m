@@ -13,7 +13,7 @@
 /* 
  Swift中使用OC代码
  1. 创建 工程名-Bridging-Header.h 文件，在文件中导入要使用的OC头文件 #import "MyClass.h"
- 2. 配置 工程名-Bridging-Header.h文件路径   $(SRCROOT)/OCAndSwift/OCAndSwift-Bridging-Header.h
+ 2. 配置 工程名-Bridging-Header.h文件路径 build setting -> Objective-C Bridging Header -> $(SRCROOT)/OCAndSwift/OCAndSwift-Bridging-Header.h
  OC中使用Swift代码
  1.系统自动为我们生成了头文件（需要我们的swift类是NSObject的直接或间接的子类），我们只要引入 
    项目名-Swift.h  (#import "OCAndSwift-Swift.h")
