@@ -8,8 +8,6 @@
 
 import UIKit
 
-//#define FREE_VERSION
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

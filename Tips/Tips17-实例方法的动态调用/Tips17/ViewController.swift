@@ -40,7 +40,7 @@ class ViewController: UIViewController {
          //当有类型方法名字冲突时  显示的加上类型声明加以区分
 //         //class func method
 //        let f1 = MyClass.method
-//        //class func method
+//        //class func method 和 f1相同
 //        let f2: Int -> Int = MyClass.method
 //        
 //         //func method 的 柯里化版本

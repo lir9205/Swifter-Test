@@ -10,15 +10,23 @@
 #import "OCAndSwift-Swift.h"
 
 
-/* 
- Swift中使用OC代码
+/* 总结：
+ ## Swift中使用OC代码
  1. 创建 工程名-Bridging-Header.h 文件，在文件中导入要使用的OC头文件 #import "MyClass.h"
  2. 配置 工程名-Bridging-Header.h文件路径 build setting -> Objective-C Bridging Header -> $(SRCROOT)/OCAndSwift/OCAndSwift-Bridging-Header.h
- OC中使用Swift代码
- 1.系统自动为我们生成了头文件（需要我们的swift类是NSObject的直接或间接的子类），我们只要引入 
+
+ 
+ ## OC中使用同一个项目中的Swift代码
+ 1.系统自动为我们生成了头文件（需要我们的swift类是NSObject的直接或间接的子类，swift会默认自动为所有的非private的类和成员加上@objc, 注意 如果需要将private的类和成员需要暴露给Objective-C，需要我们手动添加@objc修饰符），我们只要引入
    项目名-Swift.h  (#import "OCAndSwift-Swift.h")
    
    当项目名中含有 - 时，- 会转为 _, 如工程名为Tips-OCAndSwift时，生成的头文件是 Tips_OCAndSwift-Swift.h
+ 
+ 2.如果不是NSObject的子类的话，需要将暴露给Objective-C的任何地方（类，属性和方法等）的声明前加上@objc修饰词。
+ 
+ 
+ ## OC中使用来自外部的Swift框架
+ @import MySwiftKit；
  */
 
 

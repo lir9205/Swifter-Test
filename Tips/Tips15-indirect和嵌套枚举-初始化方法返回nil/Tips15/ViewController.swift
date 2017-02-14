@@ -20,7 +20,7 @@ class Node<T> {
 }
 //枚举,结构体嵌套需用indirect关键字标记
 //定义链表
-indirect enum LinkedList<Element: Comparable> {
+ indirect enum LinkedList<Element: Comparable> {
     case Empty
     case Node(Element,LinkedList<Element>)
     

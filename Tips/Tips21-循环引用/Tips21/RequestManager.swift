@@ -9,7 +9,7 @@
 import Foundation
 
 class RequestManager : RequestHandler {
-     @objc func requestFinished() {
+    @objc func requestFinished() {
         print("请求完成")
     }
     

@@ -12,6 +12,11 @@ import Foundation
 class Person {
     let name: String
     
+    //这种在闭包参数的位置进行标注的语法结构是将要标注的内容放在原来的参数面前，并使用中括号括起来呢。
+//    { [unowned self, weak someobject] (number: Int) -> Bool in
+//        return true
+//    }
+    
     lazy var printName:()->() = {
         [weak self] in        
         if let strongSelf = self {
@@ -28,3 +33,6 @@ class Person {
     }
     
 }
+
+
+

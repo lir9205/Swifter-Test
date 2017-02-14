@@ -12,7 +12,7 @@ import Foundation
 //private let sharedInstance = MyManager()
 
 class MyManager {
-/*
+/*  1
     class var sharedManager: MyManager {
         
         //在swift1.2之前并不支持存储类型的类属性，所以我们需要使用struct来存储类型变量。
@@ -28,7 +28,7 @@ class MyManager {
     }
     
  */
-/*
+/*  2
     //使用let 保证线程安全
     class var shareManager: MyManager {
         struct Static {
@@ -39,7 +39,7 @@ class MyManager {
     
    */
 
-/*
+/*   3
     //swift 1.2 之前最佳实践的做法  使用私有的全局变量
     class var sharedManager: MyManager {
         return sharedInstance
@@ -47,7 +47,7 @@ class MyManager {
     
  */
     
-    //swift 1.2及以后  
+    //swift 1.2及以后  可以class中使用 static 来声明一个类型作用域的变量
     //初始化变量的时候，Apple将会把这个初始化包装在一次swift_once_block_invoke中，以保证它的唯一性。
     //加入私有的初始化方法，来覆盖默认的公开初始化方法，这让项目的其他地方不能通过init来生成自己的MyManager 实例，也保证了类型单例的唯一性。
     
