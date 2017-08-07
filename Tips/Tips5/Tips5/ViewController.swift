@@ -13,7 +13,9 @@ struct Vector2D {
     var y = 0.0
 }
 
-//swift 中的操作符不能定义在局部域中。infix 定义的是中位操作符，两边都是输入。prefix，单目运算符且运算符在操作数前面；
+//swift 中的操作符不能定义在局部域中。
+//infix 定义的是中位操作符，两边都是输入。
+//prefix，单目运算符且运算符在操作数前面；
 //postfix,单目运算符且操作数在操作数右边。
 func + (left: Vector2D, right: Vector2D) -> Vector2D {
     return Vector2D(x: left.x + right.x, y: left.y + right.y)
@@ -27,13 +29,13 @@ prefix func - (value: Vector2D) -> Vector2D {
     return Vector2D(x: -value.x, y: -value.y)
 }
 
-postfix func ++ (inout value: Vector2D) -> Vector2D {
+postfix func ++ (value: inout Vector2D) -> Vector2D {
     value.x += 1;
     value.y += 1;
     return Vector2D(x: value.x, y: value.y)
 }
 
-prefix func ++ (inout value: Vector2D) -> Vector2D {
+prefix func ++ (value: inout Vector2D) -> Vector2D {
     let rawValue = value
     
     value.x += 1;
@@ -43,10 +45,18 @@ prefix func ++ (inout value: Vector2D) -> Vector2D {
     
 }
 
-infix operator +* {
-    associativity none //结合律 left right none
-    precedence 160 //运算的优先级，乘法和除法的优先级是150，加法和减法的优先级是140
+//infix operator +* {
+//    associativity none //结合律 left right none
+//    precedence 160 //运算的优先级，乘法和除法的优先级是150，加法和减法的优先级是140
+//}
+
+// 定义新的操作符
+precedencegroup DotProductPrecedence {
+    associativity: none
+    higherThan: MultiplicationPrecedence
 }
+
+infix operator +*: DotProductPrecedence
 
 func +*(left: Vector2D, right: Vector2D) -> Double {
     return left.x * right.x + left.y * right.y
@@ -77,8 +87,8 @@ class ViewController: UIViewController {
     }
     
     //嵌套的函数，里层和外层的参数的修饰词需保持一致
-    func makeIncrementor(addNumber: Int) -> ((inout Int) -> ()) {
-        func incrementor(inout variable: Int) -> () {
+    func makeIncrementor(_ addNumber: Int) -> ((inout Int) -> ()) {
+        func incrementor(_ variable: inout Int) -> () {
             variable += addNumber
         }
         return incrementor
