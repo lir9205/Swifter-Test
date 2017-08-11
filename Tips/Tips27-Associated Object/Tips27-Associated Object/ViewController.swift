@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
     }
 
-    func printTitle(input: MyClass) {
+    func printTitle(_ input: MyClass) {
         if let title = input.title {
             print("title: \(title)")
         } else {
