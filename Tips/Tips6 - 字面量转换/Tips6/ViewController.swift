@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: - 字面量表达
+
 enum MyBool: Int {
     case myTrue, myFalse
 }
@@ -107,6 +109,15 @@ extension Int {
     }
 }
 
+//MARK: - 多类型和容器
+
+
+//使用枚举封装数据
+enum IntOrString {
+    case intValue(Int)
+    case stringValue(String)
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -164,17 +175,9 @@ class ViewController: UIViewController {
             }
         }
         
-        
-    
     }
 
 
 }
 
 
-
-//使用枚举封装数据
-enum IntOrString {
-    case intValue(Int)
-    case stringValue(String)
-}

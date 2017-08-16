@@ -12,14 +12,14 @@ import UIKit
 //1 重载 ~= 操作符  让它接收一个 NSRegularExpression 作为模式，去匹配输入的string
 
 func ~=(pattern: NSRegularExpression,input: String) -> Bool {
-    return pattern.numberOfMatchesInString(input,
+    return pattern.numberOfMatches(in: input,
                                            options: [],
                                            range: NSMakeRange(0, input.characters.count)) > 0
 }
 
 //2 添加一个将字符串转化为 NSRegularExpression 的操作符（也可以使用StringLiteralConvertible）
 
-prefix operator ~/ {}
+prefix operator ~/
 
 prefix func ~/(pattern: String) -> NSRegularExpression {
     return try! NSRegularExpression(pattern: pattern, options: [])
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             print("同时拥有有效的网站和邮箱")
         case (_, mailRegex):
             print("只拥有有效的邮箱")
-        case (siteRegex, mailRegex):
+        case (siteRegex, _):
             print("只拥有有效的网站")
         default:
             print("啥都没有")
