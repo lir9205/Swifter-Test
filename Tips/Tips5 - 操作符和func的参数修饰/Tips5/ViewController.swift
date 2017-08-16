@@ -45,11 +45,6 @@ prefix func ++ (value: inout Vector2D) -> Vector2D {
     
 }
 
-//infix operator +* {
-//    associativity none //结合律 left right none
-//    precedence 160 //运算的优先级，乘法和除法的优先级是150，加法和减法的优先级是140
-//}
-
 // 定义新的操作符
 precedencegroup DotProductPrecedence {
     associativity: none
