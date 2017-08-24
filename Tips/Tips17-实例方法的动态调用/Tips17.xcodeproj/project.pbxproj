@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84F0611F1F443EDD008138A6 /* OCSelctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F0611E1F443EDD008138A6 /* OCSelctorViewController.m */; };
 		C47F010C1E31FC70002DACF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47F010B1E31FC70002DACF0 /* AppDelegate.swift */; };
 		C47F010E1E31FC70002DACF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47F010D1E31FC70002DACF0 /* ViewController.swift */; };
 		C47F01111E31FC70002DACF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47F010F1E31FC70002DACF0 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84F0611C1F443EDC008138A6 /* Tips17-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tips17-Bridging-Header.h"; sourceTree = "<group>"; };
+		84F0611D1F443EDD008138A6 /* OCSelctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSelctorViewController.h; sourceTree = "<group>"; };
+		84F0611E1F443EDD008138A6 /* OCSelctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSelctorViewController.m; sourceTree = "<group>"; };
 		C47F01081E31FC70002DACF0 /* Tips17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tips17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47F010B1E31FC70002DACF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C47F010D1E31FC70002DACF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +60,13 @@
 			children = (
 				C47F010B1E31FC70002DACF0 /* AppDelegate.swift */,
 				C47F010D1E31FC70002DACF0 /* ViewController.swift */,
+				84F0611D1F443EDD008138A6 /* OCSelctorViewController.h */,
+				84F0611E1F443EDD008138A6 /* OCSelctorViewController.m */,
 				C47F010F1E31FC70002DACF0 /* Main.storyboard */,
 				C47F01121E31FC70002DACF0 /* Assets.xcassets */,
 				C47F01141E31FC70002DACF0 /* LaunchScreen.storyboard */,
 				C47F01171E31FC70002DACF0 /* Info.plist */,
+				84F0611C1F443EDC008138A6 /* Tips17-Bridging-Header.h */,
 			);
 			path = Tips17;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 				TargetAttributes = {
 					C47F01071E31FC70002DACF0 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -135,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F0611F1F443EDD008138A6 /* OCSelctorViewController.m in Sources */,
 				C47F010E1E31FC70002DACF0 /* ViewController.swift in Sources */,
 				C47F010C1E31FC70002DACF0 /* AppDelegate.swift in Sources */,
 			);
@@ -249,10 +258,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tips17/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7feel.Tips17;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tips17/Tips17-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -260,10 +273,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tips17/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7feel.Tips17;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tips17/Tips17-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -286,6 +302,7 @@
 				C47F011C1E31FC70002DACF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

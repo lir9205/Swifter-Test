@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         var obj:A? = A()
         obj = nil  //内存没有释放
         
-        var manager = RequestManager()
+        let manager = RequestManager()
         manager.sendRequest()
         
         
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         
         
         let arr:NSMutableArray = NSMutableArray(array: ["hhh"])
-        arr.addObject("ggg")
+        arr.add("ggg")
         print(arr)
         
     }

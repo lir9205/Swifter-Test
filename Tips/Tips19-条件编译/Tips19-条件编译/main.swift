@@ -10,11 +10,24 @@ import UIKit
 
 
 class MyApplication: UIApplication {
-    override func sendEvent(event: UIEvent) {
+    override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
         print("event sent: \(event)");
     }
 }
 
+//CommandLine 当前进程的命令行参数
+UIApplicationMain(CommandLine.argc,
+                  UnsafeMutableRawPointer(CommandLine.unsafeArgv)
+                    .bindMemory(
+                        to: UnsafeMutablePointer<Int8>.self,
+                        capacity: Int(CommandLine.argc)),
+                  NSStringFromClass(MyApplication.self),
+                  NSStringFromClass(AppDelegate.self))
 
-UIApplicationMain(Process.argc, Process.unsafeArgv, NSStringFromClass(MyApplication), NSStringFromClass(AppDelegate))
+
+
+
+
+
+

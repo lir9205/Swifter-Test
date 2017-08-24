@@ -10,7 +10,7 @@ import Foundation
 
 
 @objc protocol RequestHandler {
-    optional func requestFinished()
+    @objc optional func requestFinished()
 }
 
 class Request {

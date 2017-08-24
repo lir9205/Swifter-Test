@@ -123,11 +123,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let myTrue: MyBool = true
-        let myFalse: MyBool = false
-        
-        print(myTrue.rawValue)
-        print(myFalse.rawValue)
+    let myTrue: MyBool = true
+    let myFalse: MyBool = false
+    
+    print(myTrue.rawValue)
+    print(myFalse.rawValue)
         
         let xiaoming:Person = "xiaoming"
         

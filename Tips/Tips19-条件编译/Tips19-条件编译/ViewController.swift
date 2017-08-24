@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     //TODO: 还未完成的工作
     //FIXME: 需要修正的地方
 
-    @IBAction func buttonClicked(sender: UIButton) {
+    @IBAction func buttonClicked(_ sender: UIButton) {
     //为了使 FREE_VERSION 有效，我们需要在项目的编译选项中进行设置，
     // bulid setting -> Swift Compiler -> custom flags -> other swift flags ->  -D FREE_VERSION
 

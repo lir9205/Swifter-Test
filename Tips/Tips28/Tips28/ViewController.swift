@@ -24,7 +24,7 @@ extension UIImage {
 
 extension UIViewController {
     func performSegue(withName segueName: SegueName, sender: AnyObject?) {
-        performSegueWithIdentifier(segueName.rawValue, sender: sender)
+        self.performSegue(withIdentifier: segueName.rawValue, sender: sender)
     }
 }
 
