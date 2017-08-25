@@ -104,6 +104,7 @@
 				TargetAttributes = {
 					C471CE891E5145CE00D9486C = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -264,6 +265,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.7feel.Tips25---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Tips25-判等/Tips25_判等-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -276,6 +278,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.7feel.Tips25---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Tips25-判等/Tips25_判等-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -298,6 +301,7 @@
 				C471CE9E1E5145CF00D9486C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

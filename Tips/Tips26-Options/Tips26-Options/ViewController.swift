@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct MyOption: OptionSetType {
+struct MyOption: OptionSet {
     let rawValue: UInt
     
     static let none = MyOption(rawValue: 0)
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         var result = 0
         
-        for (idx, num) in [1,2,3,4,5].enumerate() {
+        for (idx, num) in [1,2,3,4,5].enumerated() {
             result += num
             if idx == 2 {
                 break
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         
         
         for _ in 0...100 {
-            let range = Range<Int>(1...6)
+            let range = CountableRange<Int>(1...6)
             print(random(in: range))
         }
         
@@ -57,8 +57,8 @@ class ViewController: UIViewController {
     }
     //随机返回一个区间范围的数
     func random(in range: Range<Int>) -> Int {
-        let count = UInt32(range.endIndex - range.startIndex)
-        return Int(arc4random_uniform(count)) + range.startIndex
+        let count = UInt32(range.upperBound - range.lowerBound)
+        return Int(arc4random_uniform(count)) + range.lowerBound
     }
     
     override func didReceiveMemoryWarning() {

@@ -8,29 +8,28 @@
 
 import Foundation
 
-typealias Task = (cancel: Bool) -> Void
+typealias Task = (_ cancle: Bool) -> Void
 
-func delay(time: NSTimeInterval,task:()->()) -> Task? {
+func delay(_ time: TimeInterval, task: @escaping () -> ()) -> Task? {
     
-    func dispatch_later(block:()->()) {
-        dispatch_after(
-            dispatch_time(DISPATCH_TIME_NOW,
-                Int64( time * Double(NSEC_PER_SEC))),
-            dispatch_get_main_queue(),
-            block)
+    // 嵌套函数
+    func dispatch_later(block: @escaping () -> ()) {
+        let t = DispatchTime.now() + time
+        DispatchQueue.main.asyncAfter(deadline: t, execute: block)
     }
     
-    var closure: dispatch_block_t? = task
+    
+    var closure: (() -> Void)? = task
     var result: Task?
     
     let delayedClosure: Task = {
         cancel in
-        if let internalClosure = closure {
-            if cancel == false {
-                dispatch_async(dispatch_get_main_queue(), internalClosure)
+        if let internalColsure = closure {
+            if cancel == false {  //如果不取消就执行 task
+                DispatchQueue.main.async(execute: internalColsure)
             }
         }
-        closure = nil
+        closure = nil //执行完毕或者取消执行: task = nil
         result = nil
     }
     
@@ -38,13 +37,14 @@ func delay(time: NSTimeInterval,task:()->()) -> Task? {
     
     dispatch_later {
         if let delayedClosure = result {
-            delayedClosure(cancel: false)
+            delayedClosure(false)
         }
     }
     
     return result
+    
 }
 
-func cancel(task: Task?) {
-    task?(cancel:true)
+func cancel(_ task: Task?) {
+    task?(true)
 }

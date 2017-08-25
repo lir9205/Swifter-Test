@@ -10,13 +10,13 @@ import Foundation
 
 //当无法修改想要观察的源码时，可以继承这个类并且将需要观察的属性使用dynamic重写。
 class MyClass1: NSObject {
-    var date = NSDate()
+    var date = Date()
 }
 
 
 class MyChildClass: MyClass {
-    dynamic override var date: NSDate {
-        get { return super.date }
+    dynamic override var date: Date {
+        get { return super.date as Date }
         set { super.date = newValue }
     }
 }
@@ -31,15 +31,15 @@ class Class1: NSObject{
         super.init()
         myObj = MyChildClass()
         print("初始化MyChildClass，当前时间为： \(myObj.date)")
-        myObj.addObserver(self, forKeyPath: "date", options:.New, context: &myContext)
+        myObj.addObserver(self, forKeyPath: "date", options:.new, context: &myContext)
         delay(3) { 
-            self.myObj.date = NSDate()
+            self.myObj.date = Date()
         }
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let change = change where context == &myContext {
-            let newDate = change[NSKeyValueChangeNewKey]
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let change = change, context == &myContext {
+            let newDate = change[NSKeyValueChangeKey.newKey]
             print("日期发生变化：\(newDate)")
         }
         

@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         a.title = "Swifter.tips"
         printTitle(a)
         
+
+        
     }
 
     func printTitle(_ input: MyClass) {
@@ -27,7 +29,28 @@ class ViewController: UIViewController {
             print("没有设置title")
         }
     }
+    
+    
+    func myMethod(anObj: Any!) {
+        objc_sync_enter(anObj)
+        
+        // 在 enter 和 exit 之间 anObj 不会被其他线程改变
+        objc_sync_exit(anObj)
+    }
 
+    func myMethodLocked(anObj: Any!) {
+        synchronized(anObj) { 
+            // 在 括号内 anObj 不会被其他线程改变
+        }
+    }
 
 }
 
+func synchronized(_ lock: Any, closure:()->()) {
+    
+    objc_sync_enter(lock)
+    
+    closure()
+    
+    objc_sync_exit(lock)
+}

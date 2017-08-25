@@ -13,34 +13,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // GCD
+        //  MARK: - GCD
+        // 创建目标队列
+        let workingQueue = DispatchQueue(label: "MyQueue")
         
-        //创建目标队列
-        let workingQueue = dispatch_queue_create("my_queue", nil)
-        
-        //派发到刚创建的队列中，GCD会负责进行线程调度
-        dispatch_async(workingQueue) {
-            //在 workingQueue 中异步进行
+        // 派发到刚创建的队列中
+        workingQueue.async {
+            // 在 workingQueue 中异步进行
             print("努力工作")
-            //模拟2s的执行时间
-            NSThread.sleepForTimeInterval(2)
+            Thread.sleep(forTimeInterval: 2) //模拟两秒的执行时间
             
-            dispatch_async(dispatch_get_main_queue(), { 
-                //返回到主线程更新UI
-                print("结束工作，更新UI")
-            })
+            DispatchQueue.main.async {
+                // 返回到主线程更新 UI
+                print("结束工作, 更新 UI")
+            }
         }
         
-        
-        
-        //延时执行
-        
-//        let time: NSTimeInterval = 2.0
-//        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC)))
-//        
-//        dispatch_after(delay, dispatch_get_main_queue()) { 
-//            print("2s后输出")
-//        }
+        //  MARK: - 延时调用
+        let time: TimeInterval = 2.0
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+            print("2 秒后输出")
+        }
         
         
         //使用封装之后的方法

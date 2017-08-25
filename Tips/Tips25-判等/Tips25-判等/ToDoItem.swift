@@ -26,7 +26,7 @@ class ToDoItem {
     }
     
     
-    func isEqual(item: ToDoItem) -> Bool {
+    func isEqual(_ item: ToDoItem) -> Bool {
         return self.udid == item.udid
     }
     
@@ -40,7 +40,7 @@ func ==(lhs: ToDoItem,rhs: ToDoItem) -> Bool {
     return lhs.udid == rhs.udid
 }
 
-//在重写哈希方法时候所采用的策略,与判等的时候是类似的:对于非 NSObject 的类,我们需 要遵守 Hashable 并根据 == 操作符的内容给出哈希算法;而对于 NSObject 子类,需要根据是否 需要在 Objective-C 中访问而选择合适的重写方式,去实现 Hashable 的 hashValue 或者直接重写 NSObject 的 -hash 方法。
+//在重写哈希方法时候所采用的策略,与判等的时候是类似的:对于非 NSObject 的类,我们需要遵守 Hashable 并根据 == 操作符的内容给出哈希算法;而对于 NSObject 子类,需要根据是否 需要在 Objective-C 中访问而选择合适的重写方式,去实现 Hashable 的 hashValue 或者直接重写 NSObject 的 -hash 方法。
 
 extension ToDoItem: Hashable {
     var hashValue: Int { return self.udid.characters.count }

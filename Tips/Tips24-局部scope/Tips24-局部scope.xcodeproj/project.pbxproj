@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847B4B861F4EBB78003A006B /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B4B851F4EBB78003A006B /* OCViewController.m */; };
 		C40B7E731E4DB458006539E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40B7E721E4DB458006539E4 /* AppDelegate.swift */; };
 		C40B7E751E4DB458006539E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40B7E741E4DB458006539E4 /* ViewController.swift */; };
 		C40B7E781E4DB458006539E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40B7E761E4DB458006539E4 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		847B4B831F4EBB78003A006B /* Tips24-局部scope-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tips24-局部scope-Bridging-Header.h"; sourceTree = "<group>"; };
+		847B4B841F4EBB78003A006B /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
+		847B4B851F4EBB78003A006B /* OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
 		C40B7E6F1E4DB458006539E4 /* Tips24-局部scope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tips24-局部scope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40B7E721E4DB458006539E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40B7E741E4DB458006539E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +60,13 @@
 			children = (
 				C40B7E721E4DB458006539E4 /* AppDelegate.swift */,
 				C40B7E741E4DB458006539E4 /* ViewController.swift */,
+				847B4B841F4EBB78003A006B /* OCViewController.h */,
+				847B4B851F4EBB78003A006B /* OCViewController.m */,
 				C40B7E761E4DB458006539E4 /* Main.storyboard */,
 				C40B7E791E4DB458006539E4 /* Assets.xcassets */,
 				C40B7E7B1E4DB458006539E4 /* LaunchScreen.storyboard */,
 				C40B7E7E1E4DB458006539E4 /* Info.plist */,
+				847B4B831F4EBB78003A006B /* Tips24-局部scope-Bridging-Header.h */,
 			);
 			path = "Tips24-局部scope";
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 				TargetAttributes = {
 					C40B7E6E1E4DB458006539E4 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -137,6 +145,7 @@
 			files = (
 				C40B7E751E4DB458006539E4 /* ViewController.swift in Sources */,
 				C40B7E731E4DB458006539E4 /* AppDelegate.swift in Sources */,
+				847B4B861F4EBB78003A006B /* OCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +258,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Tips24-局部scope/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.7feel.Tips24---scope";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tips24-局部scope/Tips24-局部scope-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -260,10 +273,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Tips24-局部scope/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.7feel.Tips24---scope";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tips24-局部scope/Tips24-局部scope-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -286,6 +302,7 @@
 				C40B7E831E4DB458006539E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
